@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1ED0098-71DF-488A-ACFE-A2DA8C87E3FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{A1F0D089-90D8-4DB0-B32D-F528D534ECE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{66936DC4-FEEA-4513-B292-AD90C911E238}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driven", "Driven", "{55C37F77-453B-45D4-AC12-F02075193170}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driver", "Driver", "{2CEF1108-740E-4F74-A668-0AC857CF442F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{40E0D484-57D8-42CA-9651-52F4B80EF5DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.Infrastructure", "ContactsInsertProducer.Infrastructure\FIAP.TechChallenge.ContactsInsertProducer.Infrastructure.csproj", "{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.Domain", "ContactsInsertProducer.Domain\FIAP.TechChallenge.ContactsInsertProducer.Domain.csproj", "{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.Application", "ContactsInsertProducer.Application\FIAP.TechChallenge.ContactsInsertProducer.Application.csproj", "{9E37978D-8E53-4B95-B219-F82D9B9A471D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.Api", "ContactsInsertProducer.Api\FIAP.TechChallenge.ContactsInsertProducer.Api.csproj", "{86734B49-0D36-4F8C-859F-91C84E215194}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integrations", "{62600F28-1F91-4D45-987C-D36A17E4A01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.TechChallenge.ContactsInsertProducer.Integrations", "ContactsInsertProducer.Integrations\FIAP.TechChallenge.ContactsInsertProducer.Integrations.csproj", "{C2EE1BF5-96FB-461C-A9BC-670745863CB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E37978D-8E53-4B95-B219-F82D9B9A471D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E37978D-8E53-4B95-B219-F82D9B9A471D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E37978D-8E53-4B95-B219-F82D9B9A471D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E37978D-8E53-4B95-B219-F82D9B9A471D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86734B49-0D36-4F8C-859F-91C84E215194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86734B49-0D36-4F8C-859F-91C84E215194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86734B49-0D36-4F8C-859F-91C84E215194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86734B49-0D36-4F8C-859F-91C84E215194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EE1BF5-96FB-461C-A9BC-670745863CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EE1BF5-96FB-461C-A9BC-670745863CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EE1BF5-96FB-461C-A9BC-670745863CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EE1BF5-96FB-461C-A9BC-670745863CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66936DC4-FEEA-4513-B292-AD90C911E238} = {B1ED0098-71DF-488A-ACFE-A2DA8C87E3FF}
+		{55C37F77-453B-45D4-AC12-F02075193170} = {66936DC4-FEEA-4513-B292-AD90C911E238}
+		{2CEF1108-740E-4F74-A668-0AC857CF442F} = {66936DC4-FEEA-4513-B292-AD90C911E238}
+		{40E0D484-57D8-42CA-9651-52F4B80EF5DE} = {B1ED0098-71DF-488A-ACFE-A2DA8C87E3FF}
+		{1FF43B79-E4E4-4B33-842C-D5D46E5FBB03} = {55C37F77-453B-45D4-AC12-F02075193170}
+		{E4E977C2-1D3B-4959-BDC3-9F821FF2FA18} = {40E0D484-57D8-42CA-9651-52F4B80EF5DE}
+		{9E37978D-8E53-4B95-B219-F82D9B9A471D} = {40E0D484-57D8-42CA-9651-52F4B80EF5DE}
+		{86734B49-0D36-4F8C-859F-91C84E215194} = {2CEF1108-740E-4F74-A668-0AC857CF442F}
+		{62600F28-1F91-4D45-987C-D36A17E4A01E} = {55C37F77-453B-45D4-AC12-F02075193170}
+		{C2EE1BF5-96FB-461C-A9BC-670745863CB8} = {62600F28-1F91-4D45-987C-D36A17E4A01E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AA5BB25-63AA-4DD6-AE03-AA322B5B815D}
+	EndGlobalSection
+EndGlobal
