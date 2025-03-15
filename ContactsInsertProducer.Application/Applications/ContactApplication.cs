@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FIAP.TechChallenge.ContactsInsertProducer.Application.Applications
 {
-    public class ContactApplication(IContactService contactService, 
+    public class ContactApplication(IContactService contactService,
                                     IContactConsultManager contactConsultManager,
                                     ILogger<ContactApplication> logger,
                                     IConfiguration configuration,
@@ -24,39 +24,47 @@ namespace FIAP.TechChallenge.ContactsInsertProducer.Application.Applications
 
         public async Task<UpsertContactResponse> AddContactAsync(ContactCreateDto contactCreateDto)
         {
-            var token = await _contactConsultManager.GetToken();
-            var contactObject = await _contactConsultManager.GetContactByEmail(contactCreateDto.Email, token);
-
             var insertResult = new UpsertContactResponse();
-            if (contactObject != null)
+            var token = await _contactConsultManager.GetToken();
+            if (token == null)
             {
                 insertResult.Success = false;
-                insertResult.Message = $"Email de contato ja existente na base.";
+                insertResult.Message = $"Houve um problema ao se obter o token para chamada externa.";
             }
             else
-            {               
-                try
-                {
-                    var massTransitObject = ChargeMassTransitObject();
-
-                    var endpoint = await _bus.GetSendEndpoint(new Uri($"queue:{massTransitObject.QueueName}"));
-
-                    await endpoint.Send(new Contact
-                                        {
-                                            Name = contactCreateDto.Name,
-                                            Email = contactCreateDto.Email,
-                                            AreaCode = contactCreateDto.AreaCode,
-                                            Phone = contactCreateDto.Phone
-                                        });
-
-                    insertResult.Success = true;
-                    insertResult.Message = "Contato inserido na FILA com sucesso.";
-                }
-                catch (Exception e)
+            {
+                var contactObject = await _contactConsultManager.GetContactByEmail(contactCreateDto?.Email, token);
+                                
+                if (contactObject != null)
                 {
                     insertResult.Success = false;
-                    insertResult.Message = $"Ocorreu um problema ao tentar inserir o registro.";
-                    _logger.LogError(insertResult.Message, e);
+                    insertResult.Message = $"Email de contato ja existente na base.";
+                }
+                else
+                {
+                    try
+                    {
+                        var massTransitObject = ChargeMassTransitObject();
+
+                        var endpoint = await _bus.GetSendEndpoint(new Uri($"queue:{massTransitObject.QueueName}"));
+
+                        await endpoint.Send(new Contact
+                        {
+                            Name = contactCreateDto.Name,
+                            Email = contactCreateDto.Email,
+                            AreaCode = contactCreateDto.AreaCode,
+                            Phone = contactCreateDto.Phone
+                        });
+
+                        insertResult.Success = true;
+                        insertResult.Message = "Contato inserido na FILA com sucesso.";
+                    }
+                    catch (Exception e)
+                    {
+                        insertResult.Success = false;
+                        insertResult.Message = $"Ocorreu um problema ao tentar inserir o registro.";
+                        _logger.LogError(insertResult.Message, e);
+                    }
                 }
             }
 
@@ -67,13 +75,13 @@ namespace FIAP.TechChallenge.ContactsInsertProducer.Application.Applications
         {
             return new MassTransitDTO()
             {
-                QueueName = _configuration.GetSection("MassTransit")["QueueName"] ?? string.Empty,
+                QueueName = _configuration.GetSection("MassTransit:QueueName").Value ?? string.Empty,
 
-                Server = _configuration.GetSection("MassTransit")["Server"] ?? string.Empty,
+                Server = _configuration.GetSection("MassTransit:Server").Value ?? string.Empty,
 
-                User = _configuration.GetSection("MassTransit")["User"] ?? string.Empty,
+                User = _configuration.GetSection("MassTransit:User").Value ?? string.Empty,
 
-                Password = _configuration.GetSection("MassTransit")["Password"] ?? string.Empty
+                Password = _configuration.GetSection("MassTransit:Password").Value ?? string.Empty
             };
         }
     }

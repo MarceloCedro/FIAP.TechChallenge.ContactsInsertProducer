@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1ED0098-71DF-488A-ACFE-A2DA8C87E3FF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{A1F0D089-90D8-4DB0-B32D-F528D534ECE2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A1F0D089-90D8-4DB0-B32D-F528D534ECE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{66936DC4-FEEA-4513-B292-AD90C911E238}"
 EndProject
@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integration
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.Integrations", "ContactsInsertProducer.Integrations\FIAP.TechChallenge.ContactsInsertProducer.Integrations.csproj", "{C2EE1BF5-96FB-461C-A9BC-670745863CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.TechChallenge.ContactsInsertProducer.UnitTest", "ContactsInsertProducer.UnitTest\ContactsInsertProducer.UnitTest\FIAP.TechChallenge.ContactsInsertProducer.UnitTest.csproj", "{8F76D08B-3D31-470D-81F6-9CE3E5B54142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.UnitTest", "ContactsInsertProducer.UnitTest\ContactsInsertProducer.UnitTest\FIAP.TechChallenge.ContactsInsertProducer.UnitTest.csproj", "{8F76D08B-3D31-470D-81F6-9CE3E5B54142}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.TechChallenge.ContactsInsertProducer.IntegrationTests", "ContactsInsertProducer.IntegrationTests\FIAP.TechChallenge.ContactsInsertProducer.IntegrationTests.csproj", "{BB42243B-CD4F-4813-8137-FE4B45347651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{8F76D08B-3D31-470D-81F6-9CE3E5B54142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F76D08B-3D31-470D-81F6-9CE3E5B54142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F76D08B-3D31-470D-81F6-9CE3E5B54142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB42243B-CD4F-4813-8137-FE4B45347651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB42243B-CD4F-4813-8137-FE4B45347651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB42243B-CD4F-4813-8137-FE4B45347651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB42243B-CD4F-4813-8137-FE4B45347651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{62600F28-1F91-4D45-987C-D36A17E4A01E} = {55C37F77-453B-45D4-AC12-F02075193170}
 		{C2EE1BF5-96FB-461C-A9BC-670745863CB8} = {62600F28-1F91-4D45-987C-D36A17E4A01E}
 		{8F76D08B-3D31-470D-81F6-9CE3E5B54142} = {A1F0D089-90D8-4DB0-B32D-F528D534ECE2}
+		{BB42243B-CD4F-4813-8137-FE4B45347651} = {A1F0D089-90D8-4DB0-B32D-F528D534ECE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8AA5BB25-63AA-4DD6-AE03-AA322B5B815D}
