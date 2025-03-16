@@ -48,7 +48,7 @@ namespace FIAP.TechChallenge.ContactsInsertProducer.Application.Applications
 
                         var endpoint = await _bus.GetSendEndpoint(new Uri($"queue:{massTransitObject.QueueName}"));
 
-                        await endpoint.Send(new Contact
+                        await endpoint.Send<ContactDto>(new ContactDto
                         {
                             Name = contactCreateDto.Name,
                             Email = contactCreateDto.Email,
