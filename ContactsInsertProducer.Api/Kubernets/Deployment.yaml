@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-insert-producer-api-deployment  # Nome do Deployment
+  annotations:
+    autor: Rodrigo Mahlow 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: contact-insert-producer-api
+  template:
+    metadata:
+      labels:
+        app: contact-insert-producer-api
+    spec:
+      containers:
+      - name: contact-insert-producer-api
+        image: maxcedro/contactsinsertprod:latest 
+        ports:
+        - containerPort: 4040 
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: 512Mi
+          requests:
+            cpu: "0.2"
+            memory: 256Mi
+        env:
+        - name: DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: contact-insert-producer-api-secrets
+              key: DefaultConnection
+        - name: SecretJWT
+          valueFrom:
+            secretKeyRef:
+              name: contact-insert-producer-api-secrets
+              key: SecretJWT
+        - name: MassTransit__User
+          valueFrom:
+            secretKeyRef:
+              name: contact-insert-producer-api-secrets
+              key: User
+        - name: MassTransit__Password
+          valueFrom:
+            secretKeyRef:
+              name: contact-insert-producer-api-secrets
+              key: Password
+        - name: MassTransit__QueueName"
+          valueFrom:
+            configMapKeyRef: 
+              name: "contact-insert-producer-api-configmap"
+              key: "QueueName"        
+        - name: MassTransit__Server
+          valueFrom:
+            configMapKeyRef: 
+              name: "contact-insert-producer-api-configmap"
+              key: "Server"
+        - name: "Integrations__ContactConsult__BasePath"
+          valueFrom:
+            configMapKeyRef: 
+              name: "contact-insert-producer-api-configmap"
+              key: "BasePath"
+        
+       

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: contact-insert-producer-api-configmap
+data:
+  QueueName: "Contacts.InsertQueue"
+  Server: "rabbitmq-clusterip"
+  BasePath: "http://kubernetes-api-clusterip/"
