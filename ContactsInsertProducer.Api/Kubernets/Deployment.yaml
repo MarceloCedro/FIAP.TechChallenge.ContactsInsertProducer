@@ -27,7 +27,7 @@ spec:
             cpu: "0.2"
             memory: 256Mi
         env:
-        - name: DefaultConnection
+        - name: ConnectionStrings__DefaultConnection
           valueFrom:
             secretKeyRef:
               name: contact-insert-producer-api-secrets
