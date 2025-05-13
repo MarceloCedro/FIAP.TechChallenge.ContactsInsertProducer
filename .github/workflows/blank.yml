@@ -45,4 +45,11 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Unit and Integration Tests 
-        run: dotnet test --no-build --verbosity normal         
+        run: dotnet test --no-build --verbosity normal      
+
+      - name: Make script executable
+        run: chmod +x ./ContactsInsertProducer.Api/Kubernets/deploy.sh
+
+      - name: Deploy to AKS
+        run: bash deploy.sh
+        working-directory: ./ContactsInsertProducer.Api/Kubernets/
